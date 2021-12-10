@@ -19,7 +19,7 @@
     <header class="header">
       <nav class="nav">
         <div class="nav__container">
-          <button class="nav__button button-reset">
+          <button class="nav__button">
             <svg
               class="nav__button-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -94,50 +94,87 @@
         </div>
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="#inicio" class="nav__link">Inicio</a>
+            <a href="#home" class="nav__link">Inicio</a>
           </li>
           <li class="nav__item">
-            <a href="#ventajas" class="nav__link">Ventajas</a>
+            <a href="#advantages" class="nav__link">Ventajas</a>
           </li>
           <li class="nav__item">
-            <a href="#servicios" class="nav__link">Servicios</a>
+            <a href="#services" class="nav__link">Servicios</a>
           </li>
           <li class="nav__item">
             <a href="#faq" class="nav__link">Preguntas frecuentes</a>
           </li>
           <li class="nav__item">
-            <a href="#contacto" class="nav__link">Contacto</a>
+            <a href="#contact" class="nav__link">Contacto</a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
-      <section></section>
-      <section></section>
-      <section></section>
-      <section></section>
-      <section></section>
+      <!-- =============== HOME =============== -->
+      <section class="home container grid" id="home">
+        <div class="home__data">
+          <h1 class="home__data-title">Soluciones en electromecánica</h1>
+          <hr class="home__data-divider" />
+          <span class="home__data-subtitle"
+            >Reparación, venta y mantenimiento de equipos eléctricos.</span
+          >
+          <div class="home__data-cta-container">
+            <a href="#contact" class="home__data-contact-button button">
+              Contáctenos
+            </a>
+            <a href="#advantages" class="home__data-link a">Sobre nosotros→</a>
+          </div>
+        </div>
+        <div class="home__banner-container">
+          <picture class="home__img-container">
+            <source
+            media="(min-width:768Fpx)"
+            srcset="./images/banner-medium-1.jpg"
+            />
+            <img class="home__img" src="./images/banner-small-1.jpg" alt="banner-presentacion" />
+          </picture>
+          <svg
+            class="home__svg"
+            width="234"
+            height="279"
+            viewBox="0 0 234 279"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="234" height="279" fill="#444444" />
+          </svg>
+        </div>
+      </section>
+      <!-- =============== ADVANTAGES =============== -->
+      <section class="advantages" id="advantages">
+        
+      </section>
+      <section class="services" id="services"></section>
+      <section class="faq" id="faq"></section>
+      <section class="contact" id="contact"></section>
     </main>
     <footer></footer>
     <script>
       const menu = document.querySelector(".nav__list");
       const menuItems = document.querySelectorAll(".nav__link");
       const hamburger = document.querySelector(".nav__button");
-      const nav_container = document.querySelector(".nav__container")
-    //   const closeIcon = document.querySelector(".closeIcon");
-    //   const menuIcon = document.querySelector(".menuIcon");
+      const nav_container = document.querySelector(".nav__container");
+      //   const closeIcon = document.querySelector(".closeIcon");
+      //   const menuIcon = document.querySelector(".menuIcon");
 
       function toggleMenu() {
         if (menu.classList.contains("nav__list--active")) {
           menu.classList.remove("nav__list--active");
           nav_container.classList.remove("nav__container--wo-shadow");
-        //   closeIcon.style.display = "none";
-        //   menuIcon.style.display = "block";
+          //   closeIcon.style.display = "none";
+          //   menuIcon.style.display = "block";
         } else {
           menu.classList.add("nav__list--active");
           nav_container.classList.add("nav__container--wo-shadow");
-        //   closeIcon.style.display = "block";
-        //   menuIcon.style.display = "none";
+          //   closeIcon.style.display = "block";
+          //   menuIcon.style.display = "none";
         }
       }
 
