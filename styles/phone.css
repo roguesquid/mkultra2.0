@@ -7,9 +7,6 @@
     --large-font-size: 2.4rem;
     --medium-font-size: 1.6rem;
     --normal-font-size: 1.3rem;
-    /* --large-font-size: 2.441rem;
-    --medium-font-size: 1.953rem;
-    --normal-font-size: 1.563rem; */
     /*========== Font weight ==========*/
     --font-regular: 400;
     --font-bold: 700;
@@ -22,8 +19,11 @@
     --xlarge: 4.8rem;
     /*========== Custom Spacing ==========*/
     --header-height: 4.6rem; 
+    --nav-logo-height: 2.3rem;
+    --nav-button-height: 2.3rem;
     --margin-layout: 2rem;
     --banner-home-width: 23.4rem;
+    --banner-svg-height: 27.9rem;
     /*========== RAUCHEN VERBOTEN ==========*/
 }
 /*=============== BASE ===============*/
@@ -35,6 +35,7 @@
 html{
     font-size: 62.5%;
     font-family: var(--body-font);
+    scroll-behavior: smooth;
 }
 body{
     margin-top: var(--header-height);
@@ -83,7 +84,7 @@ img{
 .nav__container{
     width: 100%;
     height: auto;
-    padding: .8rem 2rem;
+    padding: var(--xsmall) var(--margin-layout);
     position: fixed;
     z-index: 3;
     display: grid;
@@ -102,10 +103,10 @@ img{
     margin-right: auto;
 }
 .nav__button-icon{
-    width: 2.4rem;
+    height: var(--nav-button-height);
 }
 .nav__logo{
-    width: 102px;
+    height: var(--nav-logo-height);
 }
 .nav__list{
     transform: translateY(-125%);
@@ -178,6 +179,7 @@ img{
 }
 .home__svg{
     width: var(--banner-home-width);
+    height: var(--banner-svg-height);
     position: relative;
     left: var(--small);
 }
@@ -329,7 +331,6 @@ img{
     font-size: var(--medium-font-size);
     font-family: var(--body-font);
     border: none;
-    width: 10rem;
 }
 /*=============== FOOTER ===============*/
 .footer{
@@ -357,4 +358,48 @@ img{
 }
 .footer__span:nth-last-child(2){
     margin-bottom: var(--xxsmall);
+}
+/*=============== @media 375px===============*/
+@media screen and (min-width: 375px) {
+    :root{
+        /*========== Font and typography ==========*/
+        --large-font-size: 3.2rem;
+        --medium-font-size: 2rem;
+        --normal-font-size: 1.6rem;
+        /*========== Font weight ==========*/
+        --font-regular: 400;
+        --font-bold: 700;
+        /*========== Spacing ==========*/
+        --xxsmall: .8rem;
+        --xsmall: 1.6rem;
+        --small: 2.4rem;
+        --medium: 3.2rem;
+        --large: 4.8rem;
+        --xlarge: 6.4rem;
+        /*========== Custom Spacing ==========*/
+        --header-height: 5.8rem; 
+        --margin-layout: 2rem;
+        --banner-home-width: 29rem;
+        --nav-logo-height: 2.6rem;
+        --nav-button-height: 2.6rem;
+        --banner-svg-height: 34.4rem;
+    }
+    .contact__form-button{
+        padding: .6rem 3.2rem;
+    }
+}
+@media screen and (min-width: 768px) {
+    :root{
+        --large-font-size: 3.2rem;
+        --medium-font-size: 2rem;
+        --normal-font-size: 1.6rem;
+
+        --margin-layout: 2.8rem;
+    }
+    .home, .advantages, .services, .contact{
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact{
+        gap: 2rem;
+    }
 }
