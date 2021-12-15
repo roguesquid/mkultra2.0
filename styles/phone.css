@@ -18,7 +18,7 @@
     --large: 3.2rem;
     --xlarge: 4.8rem;
     /*========== Custom Spacing ==========*/
-    --header-height: 4.6rem; 
+    --header-height: 3.9rem; 
     --nav-logo-height: 2.3rem;
     --nav-button-height: 2.3rem;
     --margin-layout: 2rem;
@@ -36,10 +36,6 @@ html{
     font-size: 62.5%;
     font-family: var(--body-font);
     scroll-behavior: smooth;
-}
-body{
-    margin-top: var(--header-height);
-    padding-top: var(--large);
 }
 a {
     text-decoration: none;
@@ -59,7 +55,7 @@ h4{
 span{
     font-size: var(--normal-font-size);
 }
-img{
+img, svg{
     display: block;
 }
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -134,7 +130,8 @@ img{
 }
 /*=============== HOME ===============*/
 .home{
-    margin-bottom: var(--large);
+    padding-top: calc(var(--header-height) + var(--large));
+    gap: var(--medium);
 }
 .home__data{
     display: flex;
@@ -155,12 +152,15 @@ img{
     margin-bottom: var(--small);
 }
 .home__data-cta-container{
-    margin-bottom: var(--medium);
+    display: flex;
+    align-items: center;
+}
+.home__data-contact-button-container{
+    background-color: var(--black);
+    padding: .5rem 1rem;
 }
 .home__data-contact-button{
-    background-color: var(--black);
     color: var(--white);
-    padding: .5rem 1rem;
     font-weight: var(--font-bold);
     font-size: var(--normal-font-size);
 }
@@ -185,23 +185,24 @@ img{
 }
 /*=============== ADVANTAGES ===============*/
 .advantages{
-    margin-bottom: var(--large);
+    padding-top: var(--xlarge);
+}
+.advantages__container{
+    gap: var(--large);
 }
 .advantages__h2{
     margin-bottom: var(--small);
 }
 .advantages__statics{
-    margin-bottom: var(--small);
+    gap: var(--small);
 }
 .advantages__banner{
     width: 100%;
-    margin-bottom: var(--xsmall);
 }
 .advantages__phrase-container{
     width: 100%;
     padding: var(--xsmall);
     background-color: var(--black);
-    margin-bottom: var(--small);
 }
 .advantages__phrase{
     color: var(--white);
@@ -213,15 +214,15 @@ img{
 .advantages__data-span{
     font-size: var(--normal-font-size);
 }
-.advantages__info-child--margin{
-    margin-bottom: var(--small);
+.advantages__info{
+    gap: var(--large);
 }
 .advantages__info-item{
     margin-bottom: var(--xsmall);
 }
  /*=============== SERVICES ===============*/
  .services{
-    margin-bottom: var(--large);
+    padding-top: var(--xlarge);
  }
  .services__h2{
     margin-left: var(--margin-layout);
@@ -232,8 +233,9 @@ img{
  }
  .services__container-info{
      background-color: var(--black);
-     padding: var(--small) var(--margin-layout) var(--medium);
+     padding: var(--large) var(--margin-layout);
      color: var(--white);
+     gap: var(--large);
  }
 .services__li{
     font-size: var(--normal-font-size);
@@ -247,10 +249,9 @@ img{
 
 /*=============== CONTACT ===============*/
 .contact{
-    margin-bottom: var(--large);
-}
-.contact__info{
-    margin-bottom: var(--medium);
+    padding-top: var(--xlarge);
+    margin-bottom: var(--xlarge);
+    gap: var(--medium);
 }
 .contact__h2{
     margin-bottom: var(--small);
@@ -337,10 +338,8 @@ img{
     background-color: var(--black);
 }
 .footer__container{
-    padding-top: var(--small);
-}
-.footer__item{
-    margin-bottom: var(--small);
+    padding: var(--large) 0;
+    gap: var(--medium);
 }
 .footer__item:nth-child(4){
     margin-bottom: var(--xlarge);
@@ -396,12 +395,21 @@ img{
 
         --margin-layout: 2.8rem;
     }
-    .home, .advantages__container, .services__container, .contact{
+    .home, .advantages__container, .contact{
         grid-template-columns: 1fr 1fr;
+    }
+    .advantages__info{
+        gap: var(--medium);
+        align-content: flex-start;
     }
     .services__img{
         height: 100%;
         object-fit: cover;
+    }
+    .services__container-info{
+        grid-template: 1fr 1fr / 1fr 1fr;
+        grid-row-gap: var(--large);
+        grid-column-gap: var(--small);
     }
     .contact{
         gap: 2rem;
