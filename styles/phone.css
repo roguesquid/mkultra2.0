@@ -396,8 +396,12 @@ img{
 
         --margin-layout: 2.8rem;
     }
-    .home, .advantages, .services, .contact{
+    .home, .advantages__container, .services__container, .contact{
         grid-template-columns: 1fr 1fr;
+    }
+    .services__img{
+        height: 100%;
+        object-fit: cover;
     }
     .contact{
         gap: 2rem;
