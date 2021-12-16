@@ -18,9 +18,8 @@
     --large: 3.2rem;
     --xlarge: 4.8rem;
     /*========== Custom Spacing ==========*/
-    --header-height: 3.9rem; 
-    --nav-logo-height: 2.3rem;
-    --nav-button-height: 2.3rem;
+    --header-height: 3.9rem;
+    --nav-item-height: 2.3rem:
     --margin-layout: 2rem;
     --banner-home-width: 23.4rem;
     --banner-svg-height: 27.9rem;
@@ -99,10 +98,10 @@ img, svg{
     margin-right: auto;
 }
 .nav__button-icon{
-    height: var(--nav-button-height);
+    height: var(--nav-item-height);
 }
 .nav__logo{
-    height: var(--nav-logo-height);
+    height: var(--nav-item-height);
 }
 .nav__list{
     transform: translateY(-125%);
@@ -346,6 +345,7 @@ img, svg{
 }
 .footer__logo{
     width: 19.5rem;
+    height: auto;
 }
 .footer__h4{
     margin-bottom: var(--xxsmall);
@@ -355,9 +355,6 @@ img, svg{
     color: var(--white);
     display: block;
 }
-.footer__span:nth-last-child(2){
-    margin-bottom: var(--xxsmall);
-}
 /*=============== @media 375px===============*/
 @media screen and (min-width: 375px) {
     :root{
@@ -365,9 +362,6 @@ img, svg{
         --large-font-size: 3.2rem;
         --medium-font-size: 2rem;
         --normal-font-size: 1.6rem;
-        /*========== Font weight ==========*/
-        --font-regular: 400;
-        --font-bold: 700;
         /*========== Spacing ==========*/
         --xxsmall: .8rem;
         --xsmall: 1.6rem;
@@ -379,8 +373,7 @@ img, svg{
         --header-height: 5.8rem; 
         --margin-layout: 2rem;
         --banner-home-width: 29rem;
-        --nav-logo-height: 2.6rem;
-        --nav-button-height: 2.6rem;
+        --nav-item-height: 2.6rem;
         --banner-svg-height: 34.4rem;
     }
     .contact__form-button{
@@ -389,11 +382,14 @@ img, svg{
 }
 @media screen and (min-width: 768px) {
     :root{
+        /*========== Font and typography ==========*/
         --large-font-size: 3.2rem;
         --medium-font-size: 2rem;
         --normal-font-size: 1.6rem;
-
+        /*========== Custom Spacing ==========*/
+        --header-height: 6.4rem;
         --margin-layout: 2.8rem;
+        --nav-item-height: 3.2rem;
     }
     .home, .advantages__container, .contact{
         grid-template-columns: 1fr 1fr;
@@ -403,7 +399,7 @@ img, svg{
         align-content: flex-start;
     }
     .services__img{
-        height: 100%;
+        height: 38.4rem;
         object-fit: cover;
     }
     .services__container-info{
@@ -413,5 +409,33 @@ img, svg{
     }
     .contact{
         gap: 2rem;
+    }
+    .footer__container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "logo logo"
+        "phones address"
+        "email email"
+        "copyright copyright";
+    }
+    .footer__item:nth-child(1){
+        grid-area: logo;
+    }
+    .footer__item:nth-child(2){
+        grid-area: phones;
+    }
+    .footer__item:nth-child(3){
+        grid-area: email;
+    }
+    .footer__item:nth-child(4){
+        grid-area: address;
+        margin-bottom: 0;
+    }
+    .footer__item:nth-child(5){
+        grid-area: copyright;
+    }
+    .footer__logo{
+        width: 25.6rem;
     }
 }
