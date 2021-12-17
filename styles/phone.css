@@ -19,11 +19,10 @@
     --xlarge: 4.8rem;
     /*========== Custom Spacing ==========*/
     --header-height: 3.9rem;
-    --nav-item-height: 2.3rem:
+    --nav-item-height: 2.3rem;
     --margin-layout: 2rem;
     --banner-home-width: 23.4rem;
     --banner-svg-height: 27.9rem;
-    /*========== RAUCHEN VERBOTEN ==========*/
 }
 /*=============== BASE ===============*/
 *{
@@ -120,6 +119,7 @@ img, svg{
 }
 .nav__item{
     padding: .8rem 2rem;
+    list-style: none;
 }
 .nav__link{
     text-decoration: none;
@@ -180,7 +180,7 @@ img, svg{
     width: var(--banner-home-width);
     height: var(--banner-svg-height);
     position: relative;
-    left: var(--small);
+    margin-left: var(--small);
 }
 /*=============== ADVANTAGES ===============*/
 .advantages{
@@ -394,6 +394,9 @@ img, svg{
     .home, .advantages__container, .contact{
         grid-template-columns: 1fr 1fr;
     }
+    .home__data{
+        padding-top: var(--xlarge);
+    }
     .advantages__info{
         gap: var(--medium);
         align-content: flex-start;
@@ -437,5 +440,31 @@ img, svg{
     }
     .footer__logo{
         width: 25.6rem;
+    }
+}
+@media screen and (min-width: 1024px){
+    :root{
+        /*========== Font and typography ==========*/
+        --large-font-size: 3.2rem;
+        --medium-font-size: 2.2rem;
+        --normal-font-size: 1.8rem;
+        /*========== Custom Spacing ==========*/
+        --header-height: 6.4rem;
+        --margin-layout: 6.4rem;
+        --nav-item-height: 3.2rem;
+        --banner-home-width: 32rem;
+        --banner-svg-height: 38.1rem;
+    }
+    .nav__button{
+        display: none;
+    }
+    .nav__list{
+        display: flex;
+    }
+    .home__data-title{
+        font-size: 4.8rem;
+    }
+    .home__banner-container{
+        justify-self: flex-end;
     }
 }
