@@ -22,7 +22,6 @@
     --nav-item-height: 2.3rem;
     --margin-layout: 2rem;
     --banner-home-width: 23.4rem;
-    --banner-svg-height: 27.9rem;
 }
 /*=============== BASE ===============*/
 *{
@@ -63,6 +62,7 @@ li{
 .container{
     margin-left: var(--margin-layout);
     margin-right: var(--margin-layout);
+    max-width: 131.2rem;
 }
 .grid{
     display: grid;
@@ -157,6 +157,8 @@ li{
 .home__data-contact-button-container{
     background-color: var(--black);
     padding: .5rem 1rem;
+    cursor: pointer;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .home__data-contact-button{
     color: var(--white);
@@ -167,20 +169,9 @@ li{
     margin-left: var(--small);
     font-size: var(--normal-font-size);
 }
-.home__img-container{
-    position: absolute;
-    margin-top: var(--xsmall);
-    z-index: 2;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-}
 .home__img{
     width: var(--banner-home-width);
-}
-.home__svg{
-    width: var(--banner-home-width);
-    height: var(--banner-svg-height);
-    position: relative;
-    margin-left: var(--small);
+    max-width: 50.2rem;
 }
 /*=============== ADVANTAGES ===============*/
 .advantages{
@@ -230,9 +221,14 @@ li{
  .services__img{
     width: 100%;
  }
- .services__container-info{
+ .services__container-background{
      background-color: var(--black);
      padding: var(--large) var(--margin-layout);
+     width: 100%;
+     display: flex;
+     justify-content: center;
+ }
+ .services__container-info{
      color: var(--white);
      gap: var(--large);
  }
@@ -248,8 +244,7 @@ li{
 
 /*=============== CONTACT ===============*/
 .contact{
-    padding-top: var(--xlarge);
-    margin-bottom: var(--xlarge);
+    padding: var(--xlarge) 0;
     gap: var(--medium);
 }
 .contact__h2{
@@ -331,6 +326,8 @@ li{
     font-size: var(--medium-font-size);
     font-family: var(--body-font);
     border: none;
+    cursor: pointer;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 /*=============== FOOTER ===============*/
 .footer{
@@ -372,9 +369,11 @@ li{
         /*========== Custom Spacing ==========*/
         --header-height: 5.8rem; 
         --margin-layout: 2rem;
-        --banner-home-width: 29rem;
         --nav-item-height: 2.6rem;
-        --banner-svg-height: 34.4rem;
+        --banner-home-width: 29rem;
+    }
+    .home__data-contact-button-container{
+        padding: .6rem 1.4rem;
     }
     .contact__form-button{
         padding: .6rem 3.2rem;
@@ -390,12 +389,13 @@ li{
         --header-height: 6.4rem;
         --margin-layout: 2.8rem;
         --nav-item-height: 3.2rem;
+        --banner-home-width: 32vw;
     }
     .home, .advantages__container, .contact{
         grid-template-columns: 1fr 1fr;
     }
     .home__data{
-        padding-top: var(--xlarge);
+        align-self: center;
     }
     .advantages__info{
         gap: var(--medium);
@@ -452,8 +452,7 @@ li{
         --header-height: 6.4rem;
         --margin-layout: 6.4rem;
         --nav-item-height: 3.2rem;
-        --banner-home-width: 32rem;
-        --banner-svg-height: 38.1rem;
+        --banner-home-width: 32vw;
     }
     .nav__button{
         display: none;
@@ -468,10 +467,57 @@ li{
     .nav__link{
         font-size: var(--normal-font-size);
     }
+    .home__data{
+        padding: 0;
+        align-self: center;
+    }
     .home__data-title{
         font-size: 4.8rem;
     }
     .home__banner-container{
         justify-self: flex-end;
+    }
+}
+@media screen and (min-width: 1366px){
+    :root{
+        /*========== Font and typography ==========*/
+        /* --large-font-size: 4.3rem;
+        --medium-font-size: 2.986rem;
+        --normal-font-size: 2.074rem; */
+        /*========== Custom Spacing ==========*/
+        --header-height: 6.4rem;
+        --margin-layout: 6.4rem;
+        --nav-item-height: 3.2rem;
+    }
+    .home, .advantages, .contact, .footer__container{
+        margin: 0 auto;
+    }
+    .nav{
+        display: flex;
+        gap: var(--xlarge);
+    }
+    .home__data-title{
+        font-size: 5.16rem;
+    }
+    .advantages__container {
+        gap: 10rem;
+    }
+    .advantages__data {
+        gap: 3.2rem;
+    }
+    .services__container{
+        
+    }
+    .services__container-info{
+        justify-content: center;
+    }
+    .contact{
+        gap: 10rem;
+    }
+}
+@media screen and (min-width: 1440px){
+    :root{
+        /*========== Spacing ==========*/
+        --xlarge: 10rem;
     }
 }
