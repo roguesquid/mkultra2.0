@@ -171,7 +171,7 @@ li{
 }
 .home__img{
     width: var(--banner-home-width);
-    max-width: 50.2rem;
+    max-width: 41rem;
 }
 /*=============== ADVANTAGES ===============*/
 .advantages{
