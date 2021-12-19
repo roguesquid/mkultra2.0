@@ -159,7 +159,7 @@ li{
     background-color: var(--black);
     padding: .5rem 1rem;
     cursor: pointer;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
 }
 .home__data-contact-button-container:hover{
     background-color: #363636;
@@ -201,6 +201,11 @@ li{
 .advantages__phrase{
     color: var(--white);
     font-size: var(--large-font-size);
+}
+@media screen and (min-width: 320px) {
+    .advantages__data{
+        gap: 3.2rem;
+    }
 }
 .advantages__data{
     display: flex;
@@ -331,7 +336,7 @@ li{
     font-family: var(--body-font);
     border: none;
     cursor: pointer;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
 }
 .contact__form-button:hover{
     background-color: #363636;
@@ -386,7 +391,7 @@ li{
         padding: .6rem 3.2rem;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
     :root{
         /*========== Font and typography ==========*/
         --large-font-size: 3.2rem;
@@ -403,6 +408,9 @@ li{
     }
     .home__data{
         align-self: center;
+    }
+    .home__banner-container{
+        justify-self: flex-end;
     }
     .advantages__info{
         gap: var(--medium);
@@ -481,17 +489,9 @@ li{
     .home__data-title{
         font-size: 4.8rem;
     }
-    .home__banner-container{
-        justify-self: flex-end;
-    }
 }
 @media screen and (min-width: 1366px){
     :root{
-        /*========== Font and typography ==========*/
-        /* --large-font-size: 4.3rem;
-        --medium-font-size: 2.986rem;
-        --normal-font-size: 2.074rem; */
-        /*========== Custom Spacing ==========*/
         --header-height: 6.4rem;
         --margin-layout: 6.4rem;
         --nav-item-height: 3.2rem;
@@ -508,9 +508,6 @@ li{
     }
     .advantages__container {
         gap: 10rem;
-    }
-    .advantages__data {
-        gap: 3.2rem;
     }
     .services__container{
         

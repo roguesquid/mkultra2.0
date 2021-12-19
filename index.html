@@ -422,13 +422,9 @@
         </div>
         <div class="home__banner-container">
           <picture class="home__img-container">
-            <source
-              media="(min-width:768Fpx)"
-              srcset="./images/banner-medium-1.jpg"
-            />
             <img
               class="home__img"
-              src="./images/banner-small-1.jpg"
+              src="./images/banner-small.jpg"
               alt="banner-presentacion"
             />
           </picture>
@@ -1136,7 +1132,7 @@
           distance: '60px',
           duration: 2000,
       })
-      sr.reveal('.home__data, .advantages__data-item, .contact__info, .contact__form, .advantages__info-child, .footer__item', {
+      sr.reveal('.home__data, .contact__info, .contact__form, .advantages__info-child, .footer__item', {
         origin: "top",
         interval: 100,
       });
@@ -1148,6 +1144,10 @@
         origin: "right",
         interval: 100,
       });
+      sr.reveal(".advantages__data-item", {
+        origin: "top",
+        interval: 100,
+      })
       </script>
   </body>
 </html>
